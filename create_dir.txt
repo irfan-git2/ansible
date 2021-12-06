@@ -1,0 +1,9 @@
+---
+- hosts: 192.168.2.100
+  tasks:
+  - name: ansible set permission recursvely for a directory
+    file:
+      path: /tmp/devops_directory
+      state: directory
+      mode: "u=rw,g=wx,o=rwx"
+      recurse: yes
